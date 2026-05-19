@@ -11,3 +11,5 @@ sqlalchemy
 psycopg2-binary
 jupyter
 notebook
+sqlalchemy
+psycopg2-binary
