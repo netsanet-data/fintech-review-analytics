@@ -1,52 +1,101 @@
-# FinTech Review Analytics
+# Fintech Review Analytics
 
 ## Project Overview
+This project analyzes customer reviews from Ethiopian fintech mobile banking applications using data collection, preprocessing, sentiment analysis, and thematic analysis techniques.
 
-This project analyzes Google Play Store reviews using sentiment analysis and data analytics techniques.
+The project focuses on three banks:
+- Commercial Bank of Ethiopia (CBE)
+- Bank of Abyssinia (BOA)
+- Dashen Bank
 
-The project includes:
+The reviews were collected from Google Play Store using the `google-play-scraper` library.
 
-- Data scraping from Google Play Store
-- Data preprocessing and cleaning
-- Sentiment analysis using TextBlob
-- Database analysis using SQLite
-- Business insights and visualization
-
-## Technologies Used
-
-- Python
-- Pandas
-- Matplotlib
-- TextBlob
-- SQLite
-- Jupyter Notebook
+---
 
 ## Project Structure
 
-- notebooks/ → analysis notebooks
-- data/ → datasets and database
-- scripts/ → helper scripts
-- src/ → source code
-- tests/ → testing files
+fintech-review-analytics/
+│
+├── data/
+├── notebooks/
+├── scripts/
+│   ├── scrape_reviews.py
+│   ├── preprocess_reviews.py
+│   ├── sentiment_analysis.py
+│   └── thematic_analysis.py
+│
+├── tests/
+├── .github/workflows/unittests.yml
+├── requirements.txt
+├── .gitignore
+└── README.md
 
-## Tasks Completed
+---
 
-### Task 1 — Scraping and Preprocessing
-- Scraped Instagram reviews
-- Cleaned dataset
-- Created visualizations
+## Data Collection
 
-### Task 2 — Sentiment Analysis
-- Generated sentiment scores
-- Classified positive/negative/neutral reviews
-- Created sentiment distribution charts
+The review data was collected using:
+- google-play-scraper
+- Google Play Store reviews
 
-### Task 3 — Database Analysis
-- Stored data in SQLite database
-- Queried sentiment statistics
-- Visualized database results
+Collected fields include:
+- review_id
+- review_text
+- rating
+- date
+- bank_name
+- source
 
-### Task 4 — Insights
-- Generated business insights
-- Compared ratings and sentiment
-- Identified customer satisfaction patterns
+---
+
+## Preprocessing Steps
+
+The preprocessing script performs:
+- duplicate removal using review_id
+- missing value handling
+- date normalization to YYYY-MM-DD format
+
+---
+
+## Sentiment Analysis
+
+Sentiment analysis was implemented using TextBlob.
+
+The script generates:
+- sentiment_label
+- sentiment_score
+
+The reviews are classified as:
+- Positive
+- Negative
+- Neutral
+
+---
+
+## Thematic Analysis
+
+Thematic analysis was implemented using TF-IDF keyword extraction from scikit-learn.
+
+Common keywords extracted include:
+- banking
+- transfer
+- update
+- mobile
+- service
+
+---
+
+## Limitations
+
+Some limitations encountered:
+- Google Play reviews may contain spam or short comments
+- Internet connectivity may affect scraping
+- Some reviews are written in mixed languages
+
+---
+
+## Requirements
+
+Install dependencies using:
+
+pip install -r requirements.txt
