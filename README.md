@@ -99,3 +99,24 @@ Some limitations encountered:
 Install dependencies using:
 
 pip install -r requirements.txt
+## Database Engineering
+
+PostgreSQL database integration was implemented using SQLAlchemy.
+
+Files included:
+- schema.sql
+- scripts/database_insert.py
+
+The database contains:
+- banks table
+- reviews table
+
+---
+
+## Visualizations
+
+The project includes sentiment distribution visualizations generated using Matplotlib.
+
+Generated charts:
+- Sentiment distribution by bank
+- Keyword/theme analysis charts
